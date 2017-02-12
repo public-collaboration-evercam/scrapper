@@ -5,7 +5,7 @@ defmodule Scrapper.MainView do
     %{
       data: Enum.map(data, fn(d) ->
         %{
-          imag_src: d.src,
+          image_src: d.src,
           camera_name: d.title
         }
       end)

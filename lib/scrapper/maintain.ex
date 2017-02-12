@@ -10,8 +10,8 @@ defmodule Scrapper.Maintain do
         |> Floki.find(".thumbnail-item__img")
         |> Enum.map(fn(class_data) ->
           %{
-            title: class_data |> Floki.attribute("title"),
-            src: class_data |> Floki.attribute("src")
+            title: class_data |> Floki.attribute("title") |> List.first,
+            src: class_data |> Floki.attribute("src") |> List.first
           }
         end)
       {:error, %HTTPoison.Error{reason: reason}} ->
