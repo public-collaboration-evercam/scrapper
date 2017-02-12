@@ -7,5 +7,7 @@ defmodule Scrapper.Router do
 
   scope "/api", Scrapper do
     pipe_through :api
+
+    post "/cameras/axis", MainController, :index
   end
 end

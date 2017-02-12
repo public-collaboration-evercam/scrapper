@@ -1,3 +1,3 @@
 defmodule Scrapper.MainView do
-  use EvercamMedia.Web, :view
+  use Scrapper.Web, :view
 end
