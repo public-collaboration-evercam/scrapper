@@ -19,7 +19,7 @@ defmodule Scrapper.Mixfile do
   def application do
     [mod: {Scrapper, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :httpoison, :floki, :dotenv]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,8 @@ defmodule Scrapper.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.11.0"},
-     {:floki, "~> 0.14.0"}
+     {:floki, "~> 0.14.0"},
+     {:dotenv, "~> 2.0.0"}
     ]
   end
 
