@@ -8,6 +8,6 @@ defmodule Scrapper.Router do
   scope "/api", Scrapper do
     pipe_through :api
 
-    post "/cameras/axis", MainController, :index
+    get "/cameras/axis/:page_number", MainController, :index
   end
 end

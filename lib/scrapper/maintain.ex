@@ -1,6 +1,7 @@
 defmodule Scrapper.Maintain do
   require Logger
   require IEx
+
   def propose_data(page_number) do
     data_controller = System.get_env["DATA_CTRL"]
     case HTTPoison.get("#{data_controller}#{page_number}", [], []) do
@@ -13,6 +14,8 @@ defmodule Scrapper.Maintain do
             src: class_data |> Floki.attribute("src")
           }
         end)
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        Logger.debug "We hit an error which was #{reason}"
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         Logger.debug "We hit an error!"
     end
